@@ -71,7 +71,14 @@ a:hover {
     color:black;
 }
 
-#intro-section {
+#experience {
+    color:black;
+    background: #5C258D;
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);
+    background: linear-gradient(to right, #4389A2, #5C258D);
+}
+
+#intro-section, #experience-section{
     margin: 0;
     text-align: center;
     position: absolute;
@@ -108,6 +115,10 @@ a:hover {
 
 .profile-keyword, .profile-keyword-dot {
     text-align: left;
+}
+
+.inner-data {
+
 }
 
 @media screen and (max-width: 600px) {
