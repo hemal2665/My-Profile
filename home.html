@@ -3,18 +3,18 @@
     <head>
         <title>Hemal Patel</title>
         <link rel="shortcut icon" type="image/x-icon" href="Images\favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link href="CSS\Main.CSS" type="text/css" rel="stylesheet">
     </head>
-    <body>
+    <body onload="loadDefault()">
         <!-- header start-->
         <header id="header">
-            <a href="home.html">Home</a> 
-            <a href="home.html#experience">Experience</a>
-            <a href="home.html#skills">Skills</a>
-            <a href="home.html#education">Education</a> 
-            <a href="home.html#contact">Contact Me</a> 
+            <a onclick="showPage(1)">Home</a> 
+            <a onclick="showPage(2)">Experience</a>
+            <a onclick="showPage(3)">Skills</a>
+            <a onclick="showPage(4)">Education</a> 
+            <a onclick="showPage(5)">Contact Me</a> 
         </header>
         <!-- header end-->
         <section id="main-section">
@@ -90,16 +90,45 @@
                             </p>
                         </div>    
                         <div style="text-align:center">
-                            <span class="exp-dot" onclick="currentSlide(1)"></span>
-                            <span class="exp-dot" onclick="currentSlide(2)"></span>
-                            <span class="exp-dot" onclick="currentSlide(3)"></span>
+                            <span class="exp-dot"></span>
+                            <span class="exp-dot"></span>
+                            <span class="exp-dot"></span>
                         </div>
+                        <!-- Next and previous buttons -->
+                        <a class = "prev" onclick="expSlide(-1)">&#10094;</a>
+                        <a class = "next" onclick="expSlide(1)">&#10095;</a>
                     </div>  
                 </div>
             </div>
             <div class = "main" id = "skills">
                 <div class="content">
-                    This should be skills
+                    <div id = "skills-section">
+                        <h1>Techincal Skills</h1>
+                        <div class = "skills-contents">
+                            <b>Web Languages</b>
+                            <p>HTML5 / CSS3 <progress value="0.8"></progress></p>
+                            <p>javaScript <progress value="0.7"></progress></p>
+                            <p>jquery <progress value="0.5"></progress></p>
+                            <p>Php <progress value="0.7"></progress></p>
+                            <p>Php Laravel <progress value="0.4"></progress></p>
+                            <p>Bootstrap <progress value="0.3"></progress></p>
+                        </div>
+                        <div class = "skills-contents">
+                            Database Technologies / Reporting Tools
+                        </div>
+                        <div class = "skills-contents">
+                            Programming Languages and Development Studio
+                        </div>
+
+                        <div style="text-align:center">
+                            <span class="skill-dot"></span>
+                            <span class="skill-dot"></span>
+                            <span class="skill-dot"></span>
+                        </div>
+
+                    </div>
+                    <a class = "prev" onclick="skillSlide(-1)">&#10094;</a>
+                    <a class = "next" onclick="skillSlide(1)">&#10095;</a>
                 </div>
             </div>
             <div class = "main" id = "education">
@@ -115,9 +144,6 @@
                 </div>
             </div>
         </section>
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </body>
     <script type="text/javascript" src="js\main.js"></script>
 </html>
