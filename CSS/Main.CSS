@@ -70,6 +70,9 @@ a:hover {
     position: relative;
 }
 
+h1 {
+    text-align: center;
+}
 
 
 #intro {
@@ -118,7 +121,7 @@ a:hover {
 
 }
 
-#experience-section, #skills-section {
+#experience-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,17 +130,99 @@ a:hover {
     flex-grow: 1;
 }
 
-#skills {
-    color: black;
-    background: rgb(34,193,195);
-    background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(186,150,73,1) 100%);
-}
-
 .experience-contents{
     display:none;
     margin-left:20%;
     margin-right:20%;
     text-align: center;
+}
+
+#skills {
+    color: black;
+    background: rgb(34,193,195);
+    background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(186,150,73,1) 100%);
+}
+#skills-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 1;    
+}
+
+.skills-contents {
+    display:none;
+    margin-left:20%;
+    margin-right:20%;
+    align-items: left;
+}
+
+.skill-lists {
+    display: inline-block;
+    width: 50%;
+    word-wrap: break-word;
+}
+
+#education {
+    background: rgb(35,81,58);
+    /*background: linear-gradient(90deg, rgba(28,36,48,1) 0%, rgba(64,86,119,1) 100%);*/
+}
+
+#education-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 1;
+    color:honeydew;
+}
+
+.education-contents {
+    align-items: left;
+}
+
+.education-contents p {
+    color:peachpuff;
+}
+
+.education-contents i {
+    color: black;
+}
+
+#contact {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(144,129,168,1) 0%, rgba(144,129,168,1) 90.1% );
+}
+
+#contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    flex-grow: 1;
+    color: black;
+}
+
+.contact-contents img {
+    vertical-align: middle;
+}
+
+progress {
+    width: 50%;
+    
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: rgb(19, 111, 117);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
 .page-number {

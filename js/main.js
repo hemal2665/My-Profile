@@ -1,8 +1,17 @@
 const expTotalSlides = document.getElementsByClassName("experience-contents").length;
 const expSlideNumber = 2;
+
+const skillTotalSlides = document.getElementsByClassName("skills-contents").length;
+const skillSlideNumber = 3;
+
 var mainSlides = document.getElementsByClassName("main");
+
 var expSlides = document.getElementsByClassName("experience-contents");
 var dots = document.getElementsByClassName("exp-dot");
+
+var skillSlides = document.getElementsByClassName("skills-contents");
+var skillDots = document.getElementsByClassName("skill-dot");
+
 var nextButton = document.getElementsByClassName("next");
 var prevButton = document.getElementsByClassName("prev");
 
@@ -10,6 +19,7 @@ var navHeader = document.getElementById("header").children;
 
 var mainSlideIndex = 0;
 var expSlideIndex = 0;
+var skillSlideIndex = 0;
 
 function loadDefault() {
   //load first div
@@ -37,22 +47,44 @@ function showPage(n) {
     dots[0].className = dots[0].className += " active";
     nextButton[0].style.display = "block";
     prevButton[0].style.display = "block";
-  }
-  else {
-    nextButton[0].style.display = "none";
-    prevButton[0].style.display = "none";
-  }
 
-  if(n == expSlideNumber) {
-    expSlides[0].style.display = "block";
-    dots[0].className = dots[0].className += " active";
+    for (i = 0; i < skillTotalSlides; i++) {
+      skillSlides[i].style.display = "none";
+      skillDots[i].className = skillDots[i].className.replace(" active","");
+    }
+    skillSlideIndex = 0;
+  }
+  else if (n == skillSlideNumber) {
+    skillSlides[0].style.display = "block";
+    skillDots[0].className = skillDots[0].className += " active";
     nextButton[0].style.display = "block";
     prevButton[0].style.display = "block";
+
+    for (i = 0; i < expTotalSlides; i++) {
+      expSlides[i].style.display = "none";
+      dots[i].className = dots[i].className.replace(" active","");
+    }
+    expSlideIndex = 0;
   }
+
   else {
     nextButton[0].style.display = "none";
     prevButton[0].style.display = "none";
+    
+    for (i = 0; i < expTotalSlides; i++) {
+      expSlides[i].style.display = "none";
+      dots[i].className = dots[i].className.replace(" active","");
+    }
+
+    for (i = 0; i < skillTotalSlides; i++) {
+      skillSlides[i].style.display = "none";
+      skillDots[i].className = skillDots[i].className.replace(" active","");
+    }
+
+    expSlideIndex = 0;
+    skillSlideIndex = 0;
   }
+
 }
 
 
@@ -76,5 +108,28 @@ function expSlide(n) {
 
     expSlides[expSlideIndex].style.display = "block";
     dots[expSlideIndex].className = dots[expSlideIndex].className += " active";
+
+}
+
+function skillSlide(n) {
+
+  var i;
+    
+  skillSlideIndex += n;
+
+    if (skillSlideIndex >= skillTotalSlides) {
+      skillSlideIndex = 0;
+    }
+    if (skillSlideIndex < 0) {
+      skillSlideIndex = skillTotalSlides - 1;
+    }
+
+    for (i = 0; i < skillTotalSlides; i++) {
+        skillSlides[i].style.display = "none";
+        skillDots[i].className = skillDots[i].className.replace(" active","");
+    }
+
+    skillSlides[skillSlideIndex].style.display = "block";
+    skillDots[skillSlideIndex].className = skillDots[skillSlideIndex].className += " active";
 
 }
