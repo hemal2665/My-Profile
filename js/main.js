@@ -15,7 +15,7 @@ var skillDots = document.getElementsByClassName("skill-dot");
 var nextButton = document.getElementsByClassName("next");
 var prevButton = document.getElementsByClassName("prev");
 
-var navHeader = document.getElementById("header").children;
+var navHeader = document.getElementById("header").getElementsByTagName("a");
 
 var mainSlideIndex = 0;
 var expSlideIndex = 0;
@@ -132,4 +132,13 @@ function skillSlide(n) {
     skillSlides[skillSlideIndex].style.display = "block";
     skillDots[skillSlideIndex].className = skillDots[skillSlideIndex].className += " active";
 
+}
+
+function expandMenu() {
+  var x = document.getElementById("header");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }

@@ -19,13 +19,12 @@ a {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 200%;
 }
 
 header {
     background: rgba(45,45,45,0.98);
     overflow: hidden;
-    font-size: 17px;
     width: 100%;
     height: 50px;
     position: fixed;
@@ -37,25 +36,28 @@ header {
     z-index: 1;
 }
 
-header a {
-    float:left;
-    padding:11pt;
+#topnav ul {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+}
+
+#topnav a {
+    float: left;
+    padding: 11pt;
     text-align: center;
-    display:block;
-    margin:0 auto;
+    display: block;
+    margin: auto;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
-    width:20%;
+    font-size: 110%;
+    width: 20%;
 }
+
 
 a:hover {
     background-color: grey;
     cursor: pointer;
-}
-
-#main-section {
-    height: 100%;
-    width:100%;
 }
 
 .main {
@@ -63,9 +65,8 @@ a:hover {
 }
 
 .content {
-    display: inline-block;
+    display: flex;
     vertical-align: middle;
-    height: 100vh;
     width:100%;
     position: relative;
 }
@@ -79,6 +80,8 @@ h1 {
     background-color: #1fc8db;
     background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
     color:black;
+    height: 100vh;
+    padding-top: 150px;
 }
 
 #intro-section {
@@ -86,7 +89,6 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
     flex-grow: 1;
 }
 
@@ -118,7 +120,8 @@ h1 {
     color:rgb(22, 11, 71);
     background-color: #FBAB7E;
     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
+    height: 100vh;
+    padding-top: 100px;
 }
 
 #experience-section {
@@ -126,8 +129,8 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
     flex-grow: 1;
+    overflow:hidden
 }
 
 .experience-contents{
@@ -135,19 +138,25 @@ h1 {
     margin-left:20%;
     margin-right:20%;
     text-align: center;
+    animation: slide 2s forwards;
+    animation-delay: 0s;
+    -webkit-animation: slide 2s forwards;
+    -webkit-animation-delay: 0s;
 }
 
 #skills {
     color: black;
     background: rgb(34,193,195);
     background: linear-gradient(172deg, rgba(34,193,195,1) 0%, rgba(186,150,73,1) 100%);
+    height: 100vh;
+    padding-top: 100px;
 }
 #skills-section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    flex-grow: 1;    
+    flex-grow: 1;
+    overflow:hidden
 }
 
 .skills-contents {
@@ -155,6 +164,10 @@ h1 {
     margin-left:20%;
     margin-right:20%;
     align-items: left;
+    animation: slide 2s forwards;
+    animation-delay: 0s;
+    -webkit-animation: slide 2s forwards;
+    -webkit-animation-delay: 0s;
 }
 
 .skill-lists {
@@ -163,9 +176,73 @@ h1 {
     word-wrap: break-word;
 }
 
+.skill-container {
+    display: flex;
+    line-height: 250%;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.Progress-bar {
+    background-color:white;
+    display: block;
+    width: 50%;
+    border-radius: 5px;
+    height: 1.3em;
+}
+.Progress-value {
+    background-color: steelblue;
+    display: block;
+    border-radius: 5px;
+    height: 1.3em;
+}
+
+.profile-keyword, .profile-keyword-dot {
+    text-align: left;
+}
+
+.prev, .next {
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    user-select: none;
+    position: fixed;
+  }
+  
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+  }
+  
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+
+.exp-dot, .skill-dot {
+    height: 5px;
+    width: 20px;
+    margin: 0 2px;
+    background-color:black;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+.active {
+    background-color: #717171;
+  }
+
 #education {
     background: rgb(35,81,58);
-    /*background: linear-gradient(90deg, rgba(28,36,48,1) 0%, rgba(64,86,119,1) 100%);*/
 }
 
 #education-section {
@@ -180,6 +257,7 @@ h1 {
 
 .education-contents {
     align-items: left;
+    padding:20px;
 }
 
 .education-contents p {
@@ -223,104 +301,172 @@ h1 {
     vertical-align: middle;
 }
 
-progress {
-    width: 50%;
+@-webkit-keyframes slide {
+    from {
+        opacity: 0;
+    }
     
+    to {
+        opacity: 1;
+    }
 }
 
-progress[value]::-webkit-progress-value {
-    background-color: #eee;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-
-progress[value]::-moz-progress-bar {
-    background-color: rgb(19, 111, 117);
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-
-.page-number {
+@keyframes slide {
+    from {
+        opacity: 0;
+    }
     
-    color:dimgray;
+    to {
+        opacity: 1;
+    }
 }
 
-.profile-keyword, .profile-keyword-dot {
-    text-align: left;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 40px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    position: fixed;
-  }
-  
-  /* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-   /* Position the "previos button" to the right */
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-
-/* The dots/bullets/indicators */
-.exp-dot, .skill-dot {
-    cursor: pointer;
-    height: 5px;
-    width: 20px;
-    margin: 0 2px;
-    background-color:black;
-    
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-.active, .exp-dot:hover, .skill-dot:hover {
-    background-color: #717171;
-  }
-
-
-@media screen and (max-width: 600px) {
-    
+@media screen and (max-width: 1080px) {
     header {
         background: rgba(45,45,45,0.98);
         overflow: hidden;
-        font-size: 17px;
         width: 100%;
         height: 50px;
         position: fixed;
         text-align: center;
         white-space: nowrap;
         top:0;
+        padding-left: 10vw;
+        padding-right: 10vw;
         z-index: 1;
     }
-    
-    header a {
-        float:left;
-        padding:10pt;
+
+    .content {
+        display: inline-block;
+        vertical-align: middle;
+        width:100%;
+        position: relative;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #topnav a {
+        float: left;
+        padding: 6pt;
         text-align: center;
-        display:block;
-        margin:0 auto;
+        display: block;
+        margin: auto;
         border-radius: 4px;
         transition: all 0.2s ease-in-out;
+        font-size: 10pt;
+        width: 20%;
     }
+}
+
+@media screen and (max-width: 480px) /*and (orientation : landscape)*/  {
+    
+    header {
+        background: rgba(45,45,45,0.98);
+        overflow: hidden;
+        font-size: 14px;
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        white-space: nowrap;
+        padding:0;
+        padding:0;
+        top:0;
+        z-index: 1;
+    }
+
+    header a{
+        width:40%;
+    }
+    
+    .content {
+        display: inline-block;
+        vertical-align: middle;
+        width:100%;
+        position: relative;
+        font-size: 10px;
+    }
+
+    .content {
+        display: inline-block;
+        vertical-align: middle;
+        width:100%;
+        position: relative;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    
+    #intro-section img{
+        max-width: 120px;
+        max-height: 120px;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        transition: .5s ease;
+    }
+    
+    #describe p {
+        margin:0px;
+        font-size:12px;
+        text-align: justify;
+    }
+
+    .experience-contents{
+        display:none;
+        margin-left:10%;
+        margin-right:10%;
+        text-align: center;
+    }
+
+
+
+    .exp-dot, .skill-dot {
+        height: 4px;
+        width: 16px;
+        margin: 0 2px;
+      }
+
+    .prev, .next {
+        cursor: pointer;
+        top: 50%;
+        width: auto;
+        padding: 12px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        user-select: none;
+        position: fixed;
+      }
+      
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+    
+    .prev {
+        left: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+    #education-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 100vh;
+        flex-grow: 1;
+        color:honeydew;
+    }
+
+    #contact-card {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
 }

@@ -9,15 +9,22 @@
     </head>
     <body onload="loadDefault()">
         <!-- header start-->
-        <header id="header">
-            <a onclick="showPage(1)">Home</a> 
-            <a onclick="showPage(2)">Experience</a>
-            <a onclick="showPage(3)">Skills</a>
-            <a onclick="showPage(4)">Education</a> 
-            <a onclick="showPage(5)">Contact Me</a> 
+        <header>
+            <nav id = "topnav">
+                <span class="navbar-collaps" id="js-navbar-collaps">
+                    <i class="fas fa-bars"></i>
+                </span>
+                <ul id = "header">
+                    <li class="menu-item active"><a onclick="showPage(1)">Home</a></li>
+                    <li class="menu-item"><a onclick="showPage(2)">Experience</a></li>
+                    <li class="menu-item"><a onclick="showPage(3)">Skills</a></li>
+                    <li class="menu-item"><a onclick="showPage(4)">Education</a></li>
+                    <li class="menu-item"><a onclick="showPage(5)">Contact</a></li>
+                </ul>
+            </nav>
         </header>
         <!-- header end-->
-        <section id="main-section">
+        <div id="main-section">
             <div class = "main" id = "intro">
                 <div class="content">
                     <div id = "intro-section">
@@ -37,8 +44,12 @@
                 <div class="content">
                     <div id = "experience-section">
                         <h1>Professional Experience</h1>
+                        <div style="text-align:center;line-height: 220%;">
+                            <span class="exp-dot"></span>
+                            <span class="exp-dot"></span>
+                            <span class="exp-dot"></span>
+                        </div>
                         <div class = "experience-contents">
-                            <span class = "page-number">1 / 3</span>
                             <p style="text-align:left;"><b>Web Developer / Database Administrator</b> </p>
                             <p style="text-align:left;"><i>The Marco Corporation, Brantford ON (Sep 2019 - Current)</i></p>
                             <p style="text-align:left;">Overall responsibility is to effectively manage and secure the company’s data infrastructure and assist in developing internal and external web applications to support client needs.</p>
@@ -55,7 +66,6 @@
                             </p>
                         </div>
                         <div class = "experience-contents">
-                            <span class = "page-number">2 / 3</span>
                             <p style="text-align:left;"><b>Database Developer/Reporting analyst</b> </p>
                             <p style="text-align:left;"><i>AutoCapital Canada Inc. , Toronto, ON (May 2016 - Sep 2019)</i></p>
                             <p style="text-align:left;">Responsible for developing, managing, and securing the company’s data infrastructure.</p>
@@ -73,7 +83,6 @@
                             </p>
                         </div>
                         <div class = "experience-contents">
-                            <span class = "page-number">3 / 3</span>
                             <p style="text-align:left;"><b>Programmer Analyst</b> </p>
                             <p style="text-align:left;"><i>S&C Electric Canada, Etobicoke, ON (Jan 2015 - Aug 2015)</i></p>
                             <p style="text-align:left;">Build and manage reports within the context of Oracle ERP system.</p>
@@ -88,11 +97,6 @@
                                     <li>Prepare standard work documents for publication on Sharepoint.</li>
                                 </ul>
                             </p>
-                        </div>    
-                        <div style="text-align:center">
-                            <span class="exp-dot"></span>
-                            <span class="exp-dot"></span>
-                            <span class="exp-dot"></span>
                         </div>
                         <!-- Next and previous buttons -->
                         <a class = "prev" onclick="expSlide(-1)">&#10094;</a>
@@ -104,54 +108,180 @@
                 <div class="content">
                     <div id = "skills-section">
                         <h1>Techincal Skills</h1>
+                        <div style="text-align:center;line-height: 220%;">
+                            <span class="skill-dot"></span>
+                            <span class="skill-dot"></span>
+                            <span class="skill-dot"></span>
+                            <span class="skill-dot"></span>
+                        </div>
                         <div class = "skills-contents">
                             <p><h3>Web Languages</h3></p>
-                            <p><span class = "skill-lists">HTML5/CSS3</span><progress value="0.9"></progress></p>
-                            <p><span class = "skill-lists">javaScript</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">jquery</span><progress value="0.5"></progress></p>
-                            <p><span class = "skill-lists">PHP</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">PHP Laravel</span><progress value="0.4"></progress></p>
-                            <p><span class = "skill-lists">Bootstrap</span><progress value="0.3"></progress></p>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">HTML5/CSS3</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 90%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">javaScript</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">jquery</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 50%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">PHP</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">PHP Laravel</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 50%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Bootstrap</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 30%;">&nbsp;</span>
+                                </div>
+                            </div>
                         </div>
                         <div class = "skills-contents">
                             <p><h3>Database Technologies / Reporting Tools</h3></p>
-                            <p><span class = "skill-lists">SQL / T-SQL</span><progress value="1"></progress></p>
-                            <p><span class = "skill-lists">PL/SQL</span><progress value="0.8"></progress></p>
-                            <p><span class = "skill-lists">PowerBI</span><progress value="0.5"></progress></p>
-                            <p><span class = "skill-lists">MS Access / VBA</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">SSIS / SSAS / SSRS</span><progress value="0.8"></progress></p>
-                            <p><span class = "skill-lists">Oracel Forms Builder 10g</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">SQL Server 08/12/14/16/17</span><progress value="0.8"></progress></p>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">SQL / T-SQL</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 90%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">PL/SQL</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">PowerBI</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 50%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">MS Access / VBA</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">SSIS / SSAS / SSRS</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Oracel Reports Builder 10g</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">SQL Server 08/12/14/16/17</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                                </div>
+                            </div>
                         </div>
                         <div class = "skills-contents">
                             <p><h3>Programming Languages and Development Studio</h3></p>
-                            <p><span class = "skill-lists">R / R Studio</span><progress value="0.4"></progress></p>
-                            <p><span class = "skill-lists">Python / PyCharm</span><progress value="0.6"></progress></p>
-                            <p><span class = "skill-lists">VS Code</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">Toad / SQL Developer</span><progress value="0.8"></progress></p>
-                            <p><span class = "skill-lists">C#</span><progress value="0.6"></progress></p>
-                            <p><span class = "skill-lists">Oracel BI discoverer</span><progress value="0.7"></progress></p>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">R / R Studio</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 40%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Python</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 50%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">VS Code</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Toad / SQL Developer</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">C#</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 60%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Oracel BI discoverer</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
                         </div>
                         <div class = "skills-contents">
                             <p><h3>Awareness</h3></p>
-                            <p><span class = "skill-lists">MVC</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">DBMS / RDBMS</span><progress value="1"></progress></p>
-                            <p><span class = "skill-lists">ETL</span><progress value="0.8"></progress></p>
-                            <p><span class = "skill-lists">SDLC</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">OOP</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">Data Warehousing</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">Data Mining</span><progress value="0.7"></progress></p>
-                            <p><span class = "skill-lists">Data Analytics</span><progress value="0.5"></progress></p>
-                            <p><span class = "skill-lists">AWS / Azure / Digital Ocean</span><progress value="0.4"></progress></p>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">MVC</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">DBMS / RDBMS</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 90%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">ETL</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 80%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">SDLC</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">OOP</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">Data Warehousing/Mining</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 70%;">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class = "skill-container">
+                                <span class = "skill-lists">AWS / Azure</span>
+                                <div class="Progress-bar">
+                                    <span class="Progress-value" style="width: 40%;">&nbsp;</span>
+                                </div>
+                            </div>
                         </div>
-
-                        <div style="text-align:center">
-                            <span class="skill-dot"></span>
-                            <span class="skill-dot"></span>
-                            <span class="skill-dot"></span>
-                            <span class="skill-dot"></span>
-                        </div>
-
                     </div>
                     <a class = "prev" onclick="skillSlide(-1)">&#10094;</a>
                     <a class = "next" onclick="skillSlide(1)">&#10095;</a>
@@ -212,7 +342,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </body>
     <script type="text/javascript" src="js\main.js"></script>
 </html>
